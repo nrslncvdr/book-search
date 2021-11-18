@@ -14,11 +14,14 @@ back 2: https://i.hizliresim.com/blk6siu.png
 back 3: https://i.hizliresim.com/db2yim8.png
 back 4: https://i.hizliresim.com/30rgrsj.png
 back 6: https://i.hizliresim.com/syp78b9.png
+back 7: https://i.hizliresim.com/9uy3umu.png
+BACK 8: https://i.hizliresim.com/675wqbb.png
+BACK 9: https://i.hizliresim.com/hfuzcgx.png
 */
 const styleBanner = {
   width: '100%',
   height: 225,
-  backgroundImage: "url('https://i.hizliresim.com/syp78b9.png')",
+  backgroundImage: "url('https://i.hizliresim.com/9uy3umu.png')",
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -28,7 +31,7 @@ const styleBanner = {
 const styleFullscreen = {
   width: '100%',
   height: '100vh',
-  backgroundImage: "url('https://i.hizliresim.com/syp78b9.png')",
+  backgroundImage: "url('https://i.hizliresim.com/9uy3umu.png')",
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
