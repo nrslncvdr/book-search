@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 
@@ -18,23 +19,32 @@ back 7: https://i.hizliresim.com/9uy3umu.png
 BACK 8: https://i.hizliresim.com/675wqbb.png
 BACK 9: https://i.hizliresim.com/hfuzcgx.png
 */
+//background images
+let urlLessThan500pxBackground = "url('https://i.hizliresim.com/hv9bkrd.png')"
+let urlDefaultBackground = "url('https://i.hizliresim.com/675wqbb.png')"
+
 const styleBanner = {
   width: '100%',
   height: 225,
-  backgroundImage: "url('https://i.hizliresim.com/9uy3umu.png')",
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   transition: '1.5s',
+  position: '-webkit-sticky',
+  position: 'sticky',
+  top: 0,
 }
 
 const styleFullscreen = {
   width: '100%',
   height: '100vh',
-  backgroundImage: "url('https://i.hizliresim.com/9uy3umu.png')",
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
+  transition: '1.5s',
+  position: '-webkit-sticky',
+  position: 'sticky',
+  top: 0,
 }
 
 const fullGrid = {
@@ -49,6 +59,7 @@ const bannerGrid = {
 function SearchArea() {
   const [isClicked, setIsClicked] = useState(false)
   const [searchText, setSearchText] = useState('')
+  const { width } = useWindowDimensions()
 
   const clearSearchText = () => {
     let text = searchText
@@ -83,8 +94,16 @@ function SearchArea() {
       setIsClicked(true)
     }
   }
+
   return (
-    <Box sx={isClicked ? styleBanner : styleFullscreen}>
+    <Box
+      style={
+        width <= 500
+          ? { backgroundImage: urlLessThan500pxBackground }
+          : { backgroundImage: urlDefaultBackground }
+      }
+      sx={isClicked ? styleBanner : styleFullscreen}
+    >
       <Grid
         container
         direction="row"
@@ -92,17 +111,17 @@ function SearchArea() {
         alignItems="center"
         sx={isClicked ? bannerGrid : fullGrid}
       >
-        {/* paper: component="form", elevation="0" | iconbutton: type="submit" */}
+        {/* paper: component="form", elevation={0} | iconbutton: type="submit" */}
         <Paper
+          style={width <= 500 ? { width: '80%' } : { width: 390 }}
           sx={{
             p: '2px 14px',
             display: 'flex',
             alignItems: 'center',
-            width: 390,
             border: '1px solid lightgray',
             borderRadius: 20,
           }}
-          elevation="0"
+          elevation={0}
         >
           <InputBase
             sx={{ ml: 1, flex: 1 }}
