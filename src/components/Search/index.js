@@ -18,49 +18,59 @@ back 6: https://i.hizliresim.com/syp78b9.png
 back 7: https://i.hizliresim.com/9uy3umu.png
 BACK 8: https://i.hizliresim.com/675wqbb.png
 BACK 9: https://i.hizliresim.com/hfuzcgx.png
+mobile clicked: https://i.hizliresim.com/qd9eye4.png
+mobile 2: https://i.hizliresim.com/cnwfc2s.png
 */
-//background images
-let urlLessThan500pxBackground = "url('https://i.hizliresim.com/hv9bkrd.png')"
-let urlDefaultBackground = "url('https://i.hizliresim.com/675wqbb.png')"
-
-const styleBanner = {
-  width: '100%',
-  height: 225,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  transition: '1.5s',
-  position: '-webkit-sticky',
-  position: 'sticky',
-  top: 0,
-}
-
-const styleFullscreen = {
-  width: '100%',
-  height: '100vh',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  transition: '1.5s',
-  position: '-webkit-sticky',
-  position: 'sticky',
-  top: 0,
-}
-
-const fullGrid = {
-  height: '90vh',
-}
-
-const bannerGrid = {
-  height: 225,
-  transition: '1.5s',
-}
 
 function SearchArea() {
   const [isClicked, setIsClicked] = useState(false)
   const [searchText, setSearchText] = useState('')
   const { width } = useWindowDimensions()
+  // styles for box and grid
+  let halfscreenDefaultStyles = {
+    box: {
+      width: '100%',
+      height: `${width <= 600 ? '150px' : '225px'}`,
+      backgroundImage: `url(${
+        width <= 600
+          ? 'https://i.hizliresim.com/cnwfc2s.png'
+          : 'https://i.hizliresim.com/675wqbb.png'
+      })`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      transition: '1.5s',
+      position: '-webkit-sticky',
+      position: 'sticky',
+      top: 0,
+    },
+    grid: {
+      height: `${width <= 600 ? '150px' : '225px'}`,
+      transition: '1.5s',
+    },
+  }
 
+  let fullscreenDefaultStyles = {
+    box: {
+      width: '100%',
+      height: '100vh',
+      backgroundImage: `url(${
+        width <= 600
+          ? 'https://i.hizliresim.com/cnwfc2s.png'
+          : 'https://i.hizliresim.com/675wqbb.png'
+      })`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      transition: '1.5s',
+      position: '-webkit-sticky',
+      position: 'sticky',
+      top: 0,
+    },
+    grid: { height: '90vh' },
+  }
+
+  // searchText events start
   const clearSearchText = () => {
     let text = searchText
     text = text.trim()
@@ -94,27 +104,26 @@ function SearchArea() {
       setIsClicked(true)
     }
   }
-
+  // searchText events end
   return (
     <Box
-      style={
-        width <= 500
-          ? { backgroundImage: urlLessThan500pxBackground }
-          : { backgroundImage: urlDefaultBackground }
-      }
-      sx={isClicked ? styleBanner : styleFullscreen}
+      sx={isClicked ? halfscreenDefaultStyles.box : fullscreenDefaultStyles.box}
     >
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={isClicked ? bannerGrid : fullGrid}
+        sx={
+          isClicked
+            ? halfscreenDefaultStyles.grid
+            : fullscreenDefaultStyles.grid
+        }
       >
-        {/* paper: component="form", elevation={0} | iconbutton: type="submit" */}
+        {/* paper: component="form" | iconbutton: type="submit" */}
         <Paper
-          style={width <= 500 ? { width: '80%' } : { width: 390 }}
           sx={{
+            width: `${width <= 600 ? '75%' : '400px'}`,
             p: '2px 14px',
             display: 'flex',
             alignItems: 'center',
