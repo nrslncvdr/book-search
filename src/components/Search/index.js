@@ -30,7 +30,7 @@ function SearchArea() {
   let halfscreenDefaultStyles = {
     box: {
       width: '100%',
-      height: `${width <= 600 ? '150px' : '225px'}`,
+      height: `${width <= 600 ? '150px' : '200px'}`,
       backgroundImage: `url(${
         width <= 600
           ? 'https://i.hizliresim.com/cnwfc2s.png'
@@ -45,7 +45,7 @@ function SearchArea() {
       top: 0,
     },
     grid: {
-      height: `${width <= 600 ? '150px' : '225px'}`,
+      height: `${width <= 600 ? '150px' : '200px'}`,
       transition: '1.5s',
     },
   }
@@ -67,7 +67,7 @@ function SearchArea() {
       position: 'sticky',
       top: 0,
     },
-    grid: { height: '90vh' },
+    grid: { height: '95vh' },
   }
 
   // searchText events start
@@ -123,7 +123,7 @@ function SearchArea() {
         {/* paper: component="form" | iconbutton: type="submit" */}
         <Paper
           sx={{
-            width: `${width <= 600 ? '75%' : '400px'}`,
+            width: `${width <= 600 ? '75%' : '390px'}`,
             p: '2px 14px',
             display: 'flex',
             alignItems: 'center',
