@@ -27,22 +27,14 @@ function SearchArea() {
   const [searchText, setSearchText] = useState('')
   const { width } = useWindowDimensions()
   // styles for box and grid
-  let halfscreenDefaultStyles = {
+  const halfscreenStyles = {
     box: {
-      width: '100%',
       height: `${width <= 600 ? '150px' : '200px'}`,
       backgroundImage: `url(${
         width <= 600
           ? 'https://i.hizliresim.com/cnwfc2s.png'
           : 'https://i.hizliresim.com/675wqbb.png'
       })`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      transition: '1.5s',
-      position: '-webkit-sticky',
-      position: 'sticky',
-      top: 0,
     },
     grid: {
       height: `${width <= 600 ? '150px' : '200px'}`,
@@ -50,36 +42,39 @@ function SearchArea() {
     },
   }
 
-  let fullscreenDefaultStyles = {
+  const fullscreenStyles = {
     box: {
-      width: '100%',
       height: '100vh',
       backgroundImage: `url(${
         width <= 600
           ? 'https://i.hizliresim.com/cnwfc2s.png'
           : 'https://i.hizliresim.com/675wqbb.png'
       })`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      transition: '1.5s',
-      position: '-webkit-sticky',
-      position: 'sticky',
-      top: 0,
     },
     grid: { height: '95vh' },
   }
 
-  // searchText events start
-  const clearSearchText = () => {
-    let text = searchText
-    text = text.trim()
-    setSearchText(text)
-    return text
+  const fixedStylesForBox = {
+    width: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transition: '1.5s',
+    position: '-webkit-sticky',
+    position: 'sticky',
+    top: 0,
   }
 
+  // searchText events start
   const handleChange = (e) => {
     setSearchText(e.target.value)
+  }
+
+  const clearSearchText = () => {
+    let clearedText = searchText
+    clearedText = clearedText.trim()
+    setSearchText(clearedText)
+    return clearedText
   }
 
   const handleClick = () => {
@@ -104,27 +99,22 @@ function SearchArea() {
       setIsClicked(true)
     }
   }
-  // searchText events end
   return (
     <Box
-      sx={isClicked ? halfscreenDefaultStyles.box : fullscreenDefaultStyles.box}
+      style={fixedStylesForBox}
+      sx={isClicked ? halfscreenStyles.box : fullscreenStyles.box}
     >
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={
-          isClicked
-            ? halfscreenDefaultStyles.grid
-            : fullscreenDefaultStyles.grid
-        }
+        sx={isClicked ? halfscreenStyles.grid : fullscreenStyles.grid}
       >
-        {/* paper: component="form" | iconbutton: type="submit" */}
         <Paper
           sx={{
             width: `${width <= 600 ? '75%' : '390px'}`,
-            p: '2px 14px',
+            p: '0 14px',
             display: 'flex',
             alignItems: 'center',
             border: '1px solid lightgray',
