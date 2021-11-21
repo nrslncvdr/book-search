@@ -29,15 +29,15 @@ function SearchArea() {
   // styles for box and grid
   const halfscreenStyles = {
     box: {
-      height: `${width <= 600 ? '150px' : '200px'}`,
+      height: `${width <= 600 ? '150px' : '175px'}`,
       backgroundImage: `url(${
         width <= 600
           ? 'https://i.hizliresim.com/cnwfc2s.png'
-          : 'https://i.hizliresim.com/675wqbb.png'
+          : 'https://i.hizliresim.com/na0hnud.png'
       })`,
     },
     grid: {
-      height: `${width <= 600 ? '150px' : '200px'}`,
+      height: `${width <= 600 ? '150px' : '175px'}`,
       transition: '1.5s',
     },
   }
@@ -48,13 +48,14 @@ function SearchArea() {
       backgroundImage: `url(${
         width <= 600
           ? 'https://i.hizliresim.com/cnwfc2s.png'
-          : 'https://i.hizliresim.com/675wqbb.png'
+          : 'https://i.hizliresim.com/na0hnud.png'
       })`,
     },
     grid: { height: '95vh' },
   }
 
   const fixedStylesForBox = {
+    zIndex: 99,
     width: '100%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -63,6 +64,8 @@ function SearchArea() {
     position: '-webkit-sticky',
     position: 'sticky',
     top: 0,
+    boxShadow:
+      'rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px',
   }
 
   // searchText events start
