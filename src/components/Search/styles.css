@@ -1,0 +1,31 @@
+.search-box {
+    background-image: url('https://i.hizliresim.com/na0hnud.png');
+    z-index: 99;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 1.5s;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.search-paper {
+     width: 400px;
+     padding: 0 14px;
+     display: flex;
+     align-items: center;
+     border: 1px solid lightgray;
+     border-radius: 25px !important;
+}
+@media only screen and (max-width: 600px) {
+    .search-box {
+        background-image: url('https://i.hizliresim.com/cnwfc2s.png');
+    }
+    
+    .search-paper {
+        width: 75%;
+    }
+}

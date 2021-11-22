@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 
@@ -10,6 +9,7 @@ import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 //styles
+import './styles.css'
 /* Arkaplanlar
 back 2: https://i.hizliresim.com/blk6siu.png
 back 3: https://i.hizliresim.com/db2yim8.png
@@ -25,47 +25,14 @@ mobile 2: https://i.hizliresim.com/cnwfc2s.png
 function SearchArea() {
   const [isClicked, setIsClicked] = useState(false)
   const [searchText, setSearchText] = useState('')
-  const { width } = useWindowDimensions()
-  // styles for box and grid
-  const halfscreenStyles = {
-    box: {
-      height: `${width <= 600 ? '150px' : '175px'}`,
-      backgroundImage: `url(${
-        width <= 600
-          ? 'https://i.hizliresim.com/cnwfc2s.png'
-          : 'https://i.hizliresim.com/na0hnud.png'
-      })`,
-    },
-    grid: {
-      height: `${width <= 600 ? '150px' : '175px'}`,
-      transition: '1.5s',
-    },
-  }
 
-  const fullscreenStyles = {
-    box: {
-      height: '100vh',
-      backgroundImage: `url(${
-        width <= 600
-          ? 'https://i.hizliresim.com/cnwfc2s.png'
-          : 'https://i.hizliresim.com/na0hnud.png'
-      })`,
-    },
-    grid: { height: '95vh' },
-  }
-
-  const fixedStylesForBox = {
-    zIndex: 99,
-    width: '100%',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+  const afterFirstClickStyles = {
+    height: '175px',
     transition: '1.5s',
-    position: '-webkit-sticky',
-    position: 'sticky',
-    top: 0,
-    boxShadow:
-      'rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px',
+  }
+
+  const beforeFirstClickStyles = {
+    height: '100vh',
   }
 
   // searchText events start
@@ -104,27 +71,17 @@ function SearchArea() {
   }
   return (
     <Box
-      style={fixedStylesForBox}
-      sx={isClicked ? halfscreenStyles.box : fullscreenStyles.box}
+      sx={isClicked ? afterFirstClickStyles : beforeFirstClickStyles}
+      className="search-box"
     >
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={isClicked ? halfscreenStyles.grid : fullscreenStyles.grid}
+        sx={isClicked ? afterFirstClickStyles : beforeFirstClickStyles}
       >
-        <Paper
-          sx={{
-            width: `${width <= 600 ? '75%' : '390px'}`,
-            p: '0 14px',
-            display: 'flex',
-            alignItems: 'center',
-            border: '1px solid lightgray',
-            borderRadius: 20,
-          }}
-          elevation={0}
-        >
+        <Paper className="search-paper" elevation={0}>
           <InputBase
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search Books"
