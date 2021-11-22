@@ -20,6 +20,7 @@ BACK 8: https://i.hizliresim.com/675wqbb.png
 BACK 9: https://i.hizliresim.com/hfuzcgx.png
 mobile clicked: https://i.hizliresim.com/qd9eye4.png
 mobile 2: https://i.hizliresim.com/cnwfc2s.png
+back 10 mobile: https://i.hizliresim.com/l0j76wd.png
 */
 
 function SearchArea() {
