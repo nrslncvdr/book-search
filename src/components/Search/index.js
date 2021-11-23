@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import caseTown from 'case-town'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 
@@ -23,7 +24,7 @@ mobile 2: https://i.hizliresim.com/cnwfc2s.png
 back 10 mobile: https://i.hizliresim.com/l0j76wd.png
 */
 
-function SearchArea() {
+function SearchArea({ setSearchQuery }) {
   const [isClicked, setIsClicked] = useState(false)
   const [searchText, setSearchText] = useState('')
 
@@ -42,19 +43,24 @@ function SearchArea() {
   }
 
   const clearSearchText = () => {
-    let clearedText = searchText
-    clearedText = clearedText.trim()
-    setSearchText(clearedText)
-    return clearedText
+    let clearedText = caseTown.justClear(searchText)
+    let clearedTextAndAddedPlus = caseTown.searchQuery(searchText)
+    const values = {
+      text: clearedText,
+      query: clearedTextAndAddedPlus,
+    }
+    return values
   }
 
   const handleClick = () => {
     if (searchText === '') {
       return
     }
-    const text = clearSearchText()
-    console.log(text)
-    // text api'ye gönderilecek
+    const { text, query } = clearSearchText()
+    // arama çubuğundaki metin
+    setSearchText(text)
+    // api'ye gidecek metin (boşluk yerine artı olacak şekilde)
+    setSearchQuery(query)
     setIsClicked(true)
   }
 
@@ -64,9 +70,11 @@ function SearchArea() {
     }
 
     if (e.keyCode === 13) {
-      const text = clearSearchText()
-      console.log(text)
-      // text api'ye gönderilecek
+      const { text, query } = clearSearchText()
+      // arama çubuğundaki metin
+      setSearchText(text)
+      // api'ye gidecek metin (boşluk yerine artı olacak şekilde)
+      setSearchQuery(query)
       setIsClicked(true)
     }
   }
