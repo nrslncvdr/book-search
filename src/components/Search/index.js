@@ -43,7 +43,7 @@ function SearchArea({ setSearchQuery }) {
   }
 
   const clearSearchText = () => {
-    let clearedText = caseTown.justClear(searchText)
+    let clearedText = caseTown.justClear(searchText.trim())
     let clearedTextAndAddedPlus = caseTown.searchQuery(searchText.trim())
     const values = {
       text: clearedText,
