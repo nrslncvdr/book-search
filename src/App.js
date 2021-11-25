@@ -3,7 +3,7 @@ import SearchArea from './components/Search'
 import Cards from './components/Cards/Cards'
 import LoadMoreBtn from './components/LoadMoreBtn'
 import axios from 'axios'
-import { Modal } from '@mui/material'
+import Modal from './components/Modal'
 
 function App() {
   const [books, setBooks] = useState([])
