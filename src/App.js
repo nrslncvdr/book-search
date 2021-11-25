@@ -1,22 +1,35 @@
-import { useState, useEffect } from 'react'
-import SearchArea from './components/Search'
-import Cards from './components/Cards/Cards'
+import { useState, useEffect } from "react";
+import SearchArea from "./components/Search";
+import Cards from "./components/Cards/Cards";
+import axios from "axios";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [books, setBooks] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("Lynette+Anderson");
+
+  const getBooks = async () => {
+    const { data } = await axios(
+      `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`
+    );
+    setBooks(data);
+  };
 
   useEffect(() => {
-    if (searchQuery === '') {
-      return
+    getBooks();
+  }, []);
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      return;
     }
-    console.log('i am at app.js 😋: ', searchQuery)
-  }, [searchQuery])
+    console.log("i am at app.js 😋: ", searchQuery);
+  }, [searchQuery]);
   return (
     <>
       <SearchArea setSearchQuery={setSearchQuery} />
-      <Cards />
+      <Cards books={books.items} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
