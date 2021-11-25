@@ -1,39 +1,28 @@
 import React from 'react'
 import "./style.css";
 
-function Modal({showModal,setOpenModal}) {
-  return (
-    <>
-    {showModal ? (
-     <section className="modal container">
+function Modal({ showModal/* , openModal */ ,detailModal}) {
+  return showModal && detailModal ? (
+      <section className="modal container">
 
-      <div className="modal__container" id="modal-container">
-        <div className="modal__content">
-          <div className="modal__close close-modal" title="Close">
-            <i className="bx bx-x" onClick={()=> {setOpenModal(false);}}></i>
+        <div className="modal__container" id="modal-container">
+          <div className="modal__content">
+            <div className="modal__close close-modal" title="Close">
+              <i className="bx bx-x"/*  onClick={() => { openModal(false) }} */></i>
+            </div>
+            <div className="img_container">
+              <img src={detailModal.volumeInfo.imageLinks.thumbnail} alt="Book Picture" className="modal__img" />
+            </div>
+            <div className="text_container">
+              <p className="modal__description">{detailModal.volumeInfo.description.substring(0,180)} ...</p>
+              <p className="modal__author">Author - {detailModal.volumeInfo.authors[0]} </p>
+            </div>
+            <button className="modal__button" /* onClick={() => { openModal(false) }} */> Close </button>
+            <button className="modal__button"> Preview </button>
           </div>
-
-          <img
-            src=""
-            alt=""
-            className="modal__img"
-          />
-
-          <h1 className="modal__title">Good Job!</h1>
-          <p className="modal__description">Click the button to close</p>
-
-          <button className="modal__button modal__button-width">
-            View status
-          </button>
-
-          <button className="modal__button-link close-modal" onClick={()=> {setOpenModal(false);}}>
-            Close
-          </button>
         </div>
-      </div>
-    </section>) : null}
-    </>
-  );
+      </section>
+    ) : null
 }
 
 export default Modal;
