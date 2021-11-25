@@ -1,6 +1,10 @@
 import "./bookCard.css";
 
-const BookCard = ({ book, setSelectedBook }) => {
+const BookCard = ({ book, setSelectedBook, showModal }) => {
+  const modal = () => {
+    setSelectedBook(book);
+    showModal();
+  };
   return (
     <div className="card">
       <div className="cover">
@@ -10,7 +14,7 @@ const BookCard = ({ book, setSelectedBook }) => {
         <h4>{book.volumeInfo.title}</h4>
         <p>{book.volumeInfo.description}</p>
       </div>
-      <button className="card-button" onClick={() => setSelectedBook(book)}>
+      <button className="card-button" onClick={modal}>
         Details
       </button>
     </div>
