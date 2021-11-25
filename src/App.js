@@ -1,41 +1,42 @@
-import { useState, useEffect } from "react";
-import SearchArea from "./components/Search";
-import Cards from "./components/Cards/Cards";
-import LoadMoreBtn from "./components/LoadMoreBtn";
-import axios from "axios";
-import { Modal } from "@mui/material";
+import { useState, useEffect } from 'react'
+import SearchArea from './components/Search'
+import Cards from './components/Cards/Cards'
+import LoadMoreBtn from './components/LoadMoreBtn'
+import axios from 'axios'
+import { Modal } from '@mui/material'
 
 function App() {
-  const [books, setBooks] = useState([]);
-  const [selectedBook, setSelectedBook] = useState({});
-  const [searchQuery, setSearchQuery] = useState("");
-  const [page, setPage] = useState(0);
+  const [books, setBooks] = useState([])
+  const [selectedBook, setSelectedBook] = useState({})
+  const [searchQuery, setSearchQuery] = useState('')
+  const [page, setPage] = useState(0)
   const getBooks = async () => {
-    if (searchQuery === "") {
-      return;
+    if (searchQuery === '') {
+      return
     }
-    const index = page * 12;
+    const index = page * 12
     const { data } = await axios(
       `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&startIndex=${index}&maxResults=12`
-    );
-    setBooks([...books, ...data.items]);
-  };
+    )
+    setBooks([...books, ...data.items])
+  }
+
+  useEffect(() => {
+    setBooks([])
+    try {
+      getBooks()
+    } catch (e) {
+      console.log('error: ', e)
+    }
+  }, [searchQuery])
 
   useEffect(() => {
     try {
-      getBooks();
+      getBooks()
     } catch (e) {
-      console.log("error: ", e);
+      console.log('error: ', e)
     }
-  }, [searchQuery]);
-
-  useEffect(() => {
-    try {
-      getBooks();
-    } catch (e) {
-      console.log("error: ", e);
-    }
-  }, [page]);
+  }, [page])
 
   return (
     <>
@@ -48,7 +49,7 @@ function App() {
         </>
       ) : null}
     </>
-  );
+  )
 }
 
-export default App;
+export default App
