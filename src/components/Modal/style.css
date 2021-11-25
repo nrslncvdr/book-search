@@ -1,0 +1,156 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --hue: 240;
+  --first-color: hsl(var(--hue), 15%, 16%);
+  --first-color-alt: hsl(var(--hue), 16%, 12%);
+  --title-color: hsl(var(--hue), 8%, 15%);
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #fff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  --big-font-size: 1.3rem;
+  --normal-font-size: 0.938rem;
+
+  /*========== z index ==========*/
+  --z-modal: 1000;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  float: right;
+  margin-left: 2px;
+  margin-right: 30px;
+  padding: 6px;
+  width: 80px;
+  height: 30px;
+}
+/*=============== MODAL ===============*/
+.container {
+  
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+.modal {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.img_container{
+  float:left;
+  margin-right: 1.2rem;
+}
+.text_container{
+  padding: 15px;
+  height: auto;
+  overflow: hidden;
+}
+.modal__button {
+  cursor: pointer;
+  background: linear-gradient(130deg, #ff5443 0%, #ff8f4e 100%);
+  border: 0px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+.modal__button:hover {
+  font-size: 0.85rem;
+}
+.modal__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsla(var(--hue), 18%, 75%, 0.8);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: all 0.3s;
+  z-index: var(--z-modal);
+}
+
+.modal__content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem 1rem;
+  border-radius: 1rem 1rem 0 0;
+  transition: all 0.3s;
+  transform: translateY(10%);
+}
+.modal__img {
+  float: left;
+  margin-bottom: 0.75rem;
+  display: block;
+  max-height: 250px;
+  border-radius: 4px;
+}
+.modal__close {
+  display: inline-flex;
+  background: linear-gradient(130deg, #ff5443 0%, #ff8f4e 100%);
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+
+}
+/* Burası Düzelilecek! */
+.modal__close:hover {
+  font-size: 1.4rem;
+}
+.modal__title {
+  font-size: var(--big-font-size);
+  color: var(--title-color);
+  font-weight: 500;
+}
+
+.modal__description {
+  font-family: var(--body-font);
+  font-size: 14px;
+  margin-bottom: 2.5rem;
+}
+.modal__author{
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: bold;
+  color:dimgrey;
+  margin-bottom: 1.5rem;
+}
+.show-modal .modal__content {
+  /*=== Effect 1 ===*/
+  transform: translateY(0);
+}
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (min-width: 576px) {
+  .modal__content {
+    margin: auto;
+    width: 500px;
+    border-radius: 1.25rem;
+  }
+  .modal__img {
+    width: 190px;
+  }
+}
