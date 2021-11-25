@@ -13,7 +13,7 @@
   --container-color: #fff;
 
   /*========== Font and typography ==========*/
-  --body-font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --big-font-size: 1.3rem;
   --normal-font-size: 0.938rem;
 
@@ -35,7 +35,7 @@
   margin: 0;
 }
 
-button {
+.modal__button {
   float: right;
   margin-left: 2px;
   margin-right: 30px;
@@ -45,7 +45,6 @@ button {
 }
 /*=============== MODAL ===============*/
 .container {
-  
   margin-left: 0.8rem;
   margin-right: 0.8rem;
 }
@@ -54,11 +53,11 @@ button {
   display: grid;
   place-items: center;
 }
-.img_container{
-  float:left;
+.img_container {
+  float: left;
   margin-right: 1.2rem;
 }
-.text_container{
+.text_container {
   padding: 15px;
   height: auto;
   overflow: hidden;
@@ -114,7 +113,6 @@ button {
   top: 1rem;
   right: 1rem;
   cursor: pointer;
-
 }
 /* Burası Düzelilecek! */
 .modal__close:hover {
@@ -131,11 +129,11 @@ button {
   font-size: 14px;
   margin-bottom: 2.5rem;
 }
-.modal__author{
+.modal__author {
   font-family: var(--body-font);
   font-size: 12px;
   font-weight: bold;
-  color:dimgrey;
+  color: dimgrey;
   margin-bottom: 1.5rem;
 }
 .show-modal .modal__content {
