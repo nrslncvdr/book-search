@@ -21,21 +21,30 @@ function App() {
   }
 
   useEffect(() => {
-    getBooks()
-    console.log('books: ', books)
+    try {
+      getBooks()
+    } catch (e) {
+      console.log('error: ', e)
+    }
   }, [searchQuery])
 
   useEffect(() => {
-    getBooks()
-    console.log('page: ', page)
-    console.log('books: ', books)
+    try {
+      getBooks()
+    } catch (e) {
+      console.log('error: ', e)
+    }
   }, [page])
 
   return (
     <>
       <SearchArea setSearchQuery={setSearchQuery} />
-      <Cards books={books.items} />
-      <LoadMoreBtn page={page} setPage={setPage} />
+      {books.length > 1 ? (
+        <>
+          <Cards books={books} />
+          <LoadMoreBtn page={page} setPage={setPage} />
+        </>
+      ) : null}
     </>
   )
 }
