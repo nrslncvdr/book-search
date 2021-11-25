@@ -22,7 +22,6 @@ function App() {
   }
 
   useEffect(() => {
-    setBooks([])
     try {
       getBooks([])
     } catch (e) {
