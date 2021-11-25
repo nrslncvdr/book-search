@@ -10,7 +10,7 @@ function App() {
   const [selectedBook, setSelectedBook] = useState({})
   const [searchQuery, setSearchQuery] = useState('')
   const [page, setPage] = useState(0)
-  const getBooks = async () => {
+  const getBooks = async (varsaEskiVeriler) => {
     if (searchQuery === '') {
       return
     }
@@ -18,13 +18,13 @@ function App() {
     const { data } = await axios(
       `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&startIndex=${index}&maxResults=12`
     )
-    setBooks([...books, ...data.items])
+    setBooks([...varsaEskiVeriler, ...data.items])
   }
 
   useEffect(() => {
     setBooks([])
     try {
-      getBooks()
+      getBooks([])
     } catch (e) {
       console.log('error: ', e)
     }
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     try {
-      getBooks()
+      getBooks(books)
     } catch (e) {
       console.log('error: ', e)
     }
