@@ -8,7 +8,7 @@ const Cards = ({ books }) => {
     <Container fixed sx={{ p: 10 }}>
       <Grid container spacing={2}>
         {books?.slice(0, visible).map((book) => (
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid key={book.id} item xs={12} sm={6} md={3}>
             <BookCard />
           </Grid>
         ))}

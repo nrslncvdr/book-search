@@ -4,6 +4,7 @@ import axios from "axios";
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("Lynette+Anderson");
 
   const getBooks = async () => {
@@ -13,7 +14,10 @@ function App() {
     setBooks(data);
   };
 
+  console.log(isLoading);
+
   useEffect(() => {
+    if(books) setIsLoading(false)
     getBooks();
   }, []);
   return (
