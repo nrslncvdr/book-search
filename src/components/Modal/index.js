@@ -3,6 +3,7 @@ import "./style.css";
 
 function Modal({ modal, selectedBook, setModal }) {
   return modal && selectedBook ? (
+
     <section className="modal container ">
       <div className="modal__container" id="modal-container">
         <div className="modal__content centered ">

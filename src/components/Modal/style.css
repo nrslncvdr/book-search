@@ -128,7 +128,9 @@
   font-size: 14px;
   margin-bottom: 2.5rem;
 }
+
 .book__detail {
+
   font-family: var(--body-font);
   font-size: 12px;
   font-weight: bold;
