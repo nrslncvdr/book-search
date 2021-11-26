@@ -1,4 +1,5 @@
 import "./bookCard.css";
+import img from "../../images/img.png";
 
 const BookCard = ({ book, setSelectedBook, showModal }) => {
   const modal = () => {
@@ -8,7 +9,14 @@ const BookCard = ({ book, setSelectedBook, showModal }) => {
   return (
     <div className="card">
       <div className="cover">
-        <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="cover" />
+        <img
+          src={
+            book?.volumeInfo?.imageLinks?.thumbnail
+              ? book?.volumeInfo?.imageLinks?.thumbnail
+              : img
+          }
+          alt="cover"
+        />
       </div>
       <div className="card-content">
         <h4>{book.volumeInfo.title}</h4>
