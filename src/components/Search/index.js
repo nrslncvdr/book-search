@@ -52,7 +52,7 @@ function SearchArea({ setSearchQuery }) {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={isClicked ? { height: 175 } : { height: '100vh' }}
+      sx={isClicked ? { height: 150 } : { height: '100vh' }}
       className="search-grid"
     >
       <Paper className="search-paper" elevation={0}>
