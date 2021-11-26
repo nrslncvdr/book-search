@@ -1,8 +1,10 @@
 import BookCard from "./Card/BookCard";
 import { Container, Grid } from "@mui/material";
+import { useTheme } from "../../context/ThemeContext";
 
 const Cards = ({ books, setSelectedBook, showModal }) => {
-  console.log(books);
+  const { theme, setTheme } = useTheme();
+  let bgColor = theme === "light" ? "primary.main" : "secondary.main";
   return (
     <Container fixed sx={{ p: 2.5 }}>
       <Grid container spacing={2}>

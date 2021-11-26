@@ -1,46 +1,50 @@
-import { useState, useEffect } from 'react'
-import SearchArea from './components/Search'
-import Cards from './components/Cards/Cards'
-import LoadMoreBtn from './components/LoadMoreBtn'
-import axios from 'axios'
-import Modal from './components/Modal'
+import { useState, useEffect } from "react";
+import SearchArea from "./components/Search";
+import Cards from "./components/Cards/Cards";
+import LoadMoreBtn from "./components/LoadMoreBtn";
+import axios from "axios";
+import Modal from "./components/Modal";
+import {  useTheme } from "./context/ThemeContext";
 
 function App() {
-  const [books, setBooks] = useState([])
-  const [selectedBook, setSelectedBook] = useState({})
-  const [searchQuery, setSearchQuery] = useState('')
-  const [page, setPage] = useState(0)
-  const [modal, setModal] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [books, setBooks] = useState([]);
+  const [selectedBook, setSelectedBook] = useState({});
+  const [searchQuery, setSearchQuery] = useState("");
+  const [page, setPage] = useState(0);
+  const [modal, setModal] = useState(false);
   const getBooks = async (varsaEskiVeriler) => {
-    if (searchQuery === '') {
-      return
+    if (searchQuery === "") {
+      return;
     }
     try {
-      const index = page * 12
+      const index = page * 12;
       const { data } = await axios(
         `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&startIndex=${index}&maxResults=12`
-      )
-      setBooks([...varsaEskiVeriler, ...data.items])
+      );
+      setBooks([...varsaEskiVeriler, ...data.items]);
     } catch (e) {
-      console.log('error: ', e)
+      console.log("error: ", e);
     }
-  }
+  };
 
   useEffect(() => {
-    setBooks([])
-    getBooks([])
-  }, [searchQuery])
+    setBooks([]);
+    getBooks([]);
+  }, [searchQuery]);
 
   useEffect(() => {
-    getBooks(books)
-  }, [page])
+    getBooks(books);
+  }, [page]);
 
   const showModal = () => {
-    setModal(true)
-  }
+    setModal(true);
+  };
 
+  const bgColor = theme === "light" ? "#fff" : "#ccc";
+  console.log(theme);
   return (
-    <>
+    <div style={{backgroundColor: bgColor}}>
       <SearchArea setSearchQuery={setSearchQuery} />
       {books.length > 1 ? (
         <>
@@ -58,8 +62,12 @@ function App() {
           />
         </>
       ) : null}
-    </>
-  )
+      
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        Change Theme
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
