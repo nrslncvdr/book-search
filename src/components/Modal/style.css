@@ -74,6 +74,11 @@
 .modal__button:hover {
   font-size: 0.85rem;
 }
+a:hover
+{
+  color: #fff;
+  text-decoration: none;
+}
 .modal__container {
   position: absolute;
   top: 0;

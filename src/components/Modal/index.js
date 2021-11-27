@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+import img from "../images/img.png";
+import { useTheme } from "../../context/ThemeContext";
 
 function Modal({ modal, selectedBook, setModal }) {
   return modal && selectedBook ? (
@@ -17,7 +19,10 @@ function Modal({ modal, selectedBook, setModal }) {
           </div>
           <div className="img_container">
             <img
-              src={selectedBook.volumeInfo.imageLinks.thumbnail }
+              src={selectedBook?.volumeInfo?.imageLinks?.thumbnail
+                  ? selectedBook?.volumeInfo?.imageLinks?.thumbnail
+                  : img
+              } 
               alt="Book Picture"
               className="modal__img"
             />
@@ -32,9 +37,8 @@ function Modal({ modal, selectedBook, setModal }) {
             <p className="book__detail">
              {selectedBook.volumeInfo.pageCount == null ? "No pages!" : (selectedBook.volumeInfo.pageCount)+ " pages"} 
             </p>
-            <p className="book__detail">
-              Author - {selectedBook.volumeInfo.authors == null ? "No authors!" : selectedBook.volumeInfo.authors.map(a => a 
-              )} </p>
+            <p className="book__detail" >
+            Authors  <br/>{selectedBook.volumeInfo.authors == null ? "No authors!" : selectedBook.volumeInfo.authors.map(a=> <> {a} <br/></>)} </p>
           </div>
           <button
             className="modal__button"
