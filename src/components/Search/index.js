@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '../../context/ThemeContext'
 import caseTown from 'case-town'
 
 // mui components
@@ -10,8 +11,10 @@ import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 //styles
 import './styles.css'
+import ThemeToggleBtn from '../ThemeToggleBtn'
 
 function SearchArea({ setSearchQuery }) {
+  const { theme } = useTheme()
   const [isClicked, setIsClicked] = useState(false)
   const [searchText, setSearchText] = useState('')
 
@@ -55,8 +58,17 @@ function SearchArea({ setSearchQuery }) {
       sx={isClicked ? { height: 150 } : { height: '100vh' }}
       className="search-grid"
     >
-      <Paper className="search-paper" elevation={0}>
+      <Paper sx={{ position: 'absolute', top: '20px', right: '20px' }}>
+        <ThemeToggleBtn />
+      </Paper>
+
+      <Paper
+        className="search-paper"
+        style={theme === 'dark' ? { backgroundColor: '#424242' } : null}
+        elevation={0}
+      >
         <InputBase
+          style={theme === 'dark' ? { color: '#9e9e9e' } : null}
           sx={{ ml: 1, flex: 1 }}
           placeholder="Search Books"
           inputProps={{ 'aria-label': 'search books' }}
@@ -64,8 +76,13 @@ function SearchArea({ setSearchQuery }) {
           onChange={handleChange}
           onKeyDown={(e) => handleEnter(e)}
         />
-        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        <Divider
+          style={theme === 'dark' ? { backgroundColor: '#9e9e9e' } : null}
+          sx={{ height: 28, m: 0.5 }}
+          orientation="vertical"
+        />
         <IconButton
+          style={theme === 'dark' ? { color: '#9e9e9e' } : null}
           sx={{ p: '10px' }}
           onClick={handleClick}
           aria-label="search"
