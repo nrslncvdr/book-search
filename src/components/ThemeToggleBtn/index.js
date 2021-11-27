@@ -18,8 +18,8 @@ function ThemeToggleBtn() {
         onChange={handleChange}
       />
       <label for="checkbox" class="label">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon fa-xs"></i>
+        <i class="fas fa-sun fa-xs"></i>
         <div class="ball"></div>
       </label>
     </div>
