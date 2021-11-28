@@ -11,7 +11,17 @@ import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 //styles
 import './styles.css'
+import imgLight from '../images/searchBgLight.png'
+import imgDark from '../images/searchBgDark.png'
 import ThemeToggleBtn from '../ThemeToggleBtn'
+
+const bgLight = {
+  backgroundImage: `url(${imgLight})`,
+}
+
+const bgDark = {
+  backgroundImage: `url(${imgDark})`,
+}
 
 function SearchArea({ setSearchQuery }) {
   const { theme } = useTheme()
@@ -55,6 +65,7 @@ function SearchArea({ setSearchQuery }) {
       direction="row"
       justifyContent="center"
       alignItems="center"
+      style={theme === 'dark' ? bgDark : bgLight}
       sx={isClicked ? { height: 150 } : { height: '100vh' }}
       className="search-grid"
     >
@@ -64,7 +75,11 @@ function SearchArea({ setSearchQuery }) {
 
       <Paper
         className="search-paper"
-        style={theme === 'dark' ? { backgroundColor: '#424242' } : null}
+        style={
+          theme === 'dark'
+            ? { backgroundColor: '#505050', borderColor: '#505050' }
+            : null
+        }
         elevation={0}
       >
         <InputBase
