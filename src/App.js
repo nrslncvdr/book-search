@@ -41,7 +41,7 @@ function App() {
     setModal(true);
   };
 
-  const bgColor = theme === "light" ? "#fff" : "#ccc";
+  const bgColor = theme === "light" ? "#fff" : "#505050";
   console.log(theme);
   return (
     <div style={{backgroundColor: bgColor}}>
@@ -62,10 +62,6 @@ function App() {
           />
         </>
       ) : null}
-      
-      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-        Change Theme
-      </button>
     </div>
   );
 }

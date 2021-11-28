@@ -1,13 +1,16 @@
 import "./bookCard.css";
 import img from "../../images/img.png";
+import { useTheme } from "../../../context/ThemeContext";
 
 const BookCard = ({ book, setSelectedBook, showModal }) => {
+  const { theme, setTheme } = useTheme();
+  let bgColor = theme === "dark" ? "#353535" : "";
   const modal = () => {
     setSelectedBook(book);
     showModal();
   };
   return (
-    <div className="card">
+    <div className="card" style={{ backgroundColor: bgColor }}>
       <div className="cover">
         <img
           src={
