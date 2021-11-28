@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
 import { useTheme } from '../../context/ThemeContext'
-import React from 'react'
 import './style.css'
 
 function LoadMoreBtn({ page, setPage }) {
@@ -12,13 +11,9 @@ function LoadMoreBtn({ page, setPage }) {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{ marginBottom: 5 }}
+      sx={{ paddingBottom: 5 }}
     >
-      <button
-        style={theme === 'dark' ? { color: '#353535' } : null}
-        className="load-more-button"
-        onClick={handleClick}
-      >
+      <button className="load-more-button" onClick={handleClick}>
         Load More
       </button>
     </Grid>
