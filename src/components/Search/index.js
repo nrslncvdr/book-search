@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
+import CircularProgress from '@mui/material/CircularProgress'
 //styles
 import './styles.css'
 import imgLight from '../images/searchBgLight.png'
@@ -23,7 +24,7 @@ const bgDark = {
   backgroundImage: `url(${imgDark})`,
 }
 
-function SearchArea({ setSearchQuery }) {
+function SearchArea({ setSearchQuery, isLoading }) {
   const { theme } = useTheme()
   const [isClicked, setIsClicked] = useState(false)
   const [searchText, setSearchText] = useState('')
@@ -90,20 +91,32 @@ function SearchArea({ setSearchQuery }) {
           value={searchText}
           onChange={handleChange}
           onKeyDown={(e) => handleEnter(e)}
+          disabled={isLoading}
         />
         <Divider
           style={theme === 'dark' ? { backgroundColor: '#9e9e9e' } : null}
           sx={{ height: 28, m: 0.5 }}
           orientation="vertical"
         />
-        <IconButton
-          style={theme === 'dark' ? { color: '#9e9e9e' } : null}
-          sx={{ p: '10px' }}
-          onClick={handleClick}
-          aria-label="search"
-        >
-          <SearchIcon />
-        </IconButton>
+        {isLoading ? (
+          <CircularProgress
+            color="warning"
+            sx={{
+              width: '20px !important',
+              height: '20px !important',
+              margin: '12px 12px',
+            }}
+          />
+        ) : (
+          <IconButton
+            style={theme === 'dark' ? { color: '#9e9e9e' } : null}
+            sx={{ p: '10px' }}
+            onClick={handleClick}
+            aria-label="search"
+          >
+            <SearchIcon />
+          </IconButton>
+        )}
       </Paper>
     </Grid>
   )
