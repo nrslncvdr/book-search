@@ -13,16 +13,19 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [page, setPage] = useState(0)
   const [modal, setModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const getBooks = async (varsaEskiVeriler) => {
     if (searchQuery === '') {
       return
     }
     try {
+      setIsLoading(true)
       const index = page * 12
       const { data } = await axios(
         `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&startIndex=${index}&maxResults=12`
       )
       setBooks([...varsaEskiVeriler, ...data.items])
+      setIsLoading(false)
     } catch (e) {
       console.log('error: ', e)
     }
@@ -45,7 +48,7 @@ function App() {
   console.log(theme)
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <SearchArea setSearchQuery={setSearchQuery} />
+      <SearchArea setSearchQuery={setSearchQuery} isLoading={isLoading} />
       {books.length === 0 && theme === 'dark' && searchQuery.length !== '' ? (
         <div
           style={{
