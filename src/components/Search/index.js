@@ -53,7 +53,7 @@ function SearchArea({ setSearchQuery, isLoading }) {
     setSearchText(text)
     // api'ye gidecek metin (boşluk yerine artı olacak şekilde)
     setSearchQuery(query)
-    setIsClicked(true)
+    if (!isClicked) setIsClicked(true)
   }
 
   const handleClick = () => setStates()
