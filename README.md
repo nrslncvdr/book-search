@@ -53,7 +53,7 @@ Uygulama içerisindeki kitapların bilgileri <a href="https://developers.google.
 
 ## ✍ Katkıda Bulunanlar <a name="katkida-bulunanlar">
 
-<img src="https://tenor.com/view/bruce-almighty-comedy-jim-carrey-angry-typing-gif-3479485" width="400" alt="Tonton Tobi GIF - Tonton Tobi Working GIFs" style="max-width: 690px;">
+<img src="https://c.tenor.com/PqJ7yMX9GFoAAAAC/bruce-almighty-comedy.gif" width="400" alt="GIF" style="max-width: 690px;">
 
 **Samet KOYUNCU**
 <p>
