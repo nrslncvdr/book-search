@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# :face_with_monocle: Book Searching...
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](./app-gif.gif)
 
-## Available Scripts
+🌍 **Canlı URL** <a href="" target="_blank"></a>
 
-In the project directory, you can run:
+## [README]
+## Genel Bakış
+- [Proje Hakkında](#proje-hakkinda)
+- [Proje İçeriği](#proje-icerigi)
+- - [Kullanılan Teknolojiler](#kullanilan-teknolojiler)
+- - [Ekran Görüntüleri](#ekran-goruntuleri)
+- [Kurulum](#kurulum)
+- [Kullanılan Kaynaklar](#kullanilan-kaynaklar)
+- [Katkıda Bulunanlar](#katkida-bulunanlar)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## README 
+## ℹ Proje Hakkında <a name="proje-hakkinda">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[İSMEK](https://enstitu.ibb.istanbul/portal/default.aspx), Zemin İstanbul, [Kodluyoruz](https://www.kodluyoruz.org/), [Patika.dev](https://www.patika.dev/) ve [Microsoft](https://www.microsoft.com/tr-tr) iş birliği ile gerçekleştirilen "Front-End Developer Eğitim Programı" için bitirme projesi olarak **Book Searching** adlı bir kitap arama uygulaması geliştirdik.
 
-### `npm test`
+Geliştirmiş olduğumuz uygulama ile kullanıcı kitap veya yazar ismi yazarak istediği kitabı arayabilecektir. Girilen sözcüğe uygun kitaplar listelenirken, bu kitaplara ait kısa bilgiler modal ile birlikte kullanıcıya sunulmaktadır. Kullanıcı, dilerse bu kitabın tüm detaylarına "preview" butonuna tıklayarak kolayca erişebilmektir.
+ 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📝 Proje İçeriği <a name="proje-icerigi">
 
-### `npm run build`
+### <img width="24px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e0.png"> Kullanılan Teknolojiler <a name="kullanilan-teknolojiler">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>
+<a href="https://reactjs.org/" target="_blank">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> 
+</a> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+</a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<a href="https://nodejs.org/en/" target="_blank">
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+</a>
+<a href="https://mui.com/" target="_blank">
+<img src="https://img.shields.io/badge/MUI-010101?&style=for-the-badge&logoColor=white" />
+</a>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📸 Ekran Görüntüleri <a name="ekran-goruntuleri">
 
-### `npm run eject`
+![Ekran Görüntüsü](./Screenshot_searching.png)
+![Ekran Görüntüsü](./Screenshot_cards.png)
+![Ekran Görüntüsü](./Screenshot_modal.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Masaüstü ekran görüntüleri**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💻 Kurulum <a name="kurulum">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Projeyi çalıştırmak için bilgisayarınızda <a href="https://nodejs.org/en/" target="_blank">Node.JS</a> yüklü olmalıdır.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Sunucu tarafının kurulumu için:**
 
-## Learn More
+1. Dosyayı indirdikten sonra komut satırını açarak dosyanın konumunu girin.
+2. `cd server` yazarak `server` klasörüne erişin.
+3. `npm start` yazarak sunucuyu ayağa kaldırın.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📚 Kullanılan Kaynaklar <a name="kullanilan-kaynaklar">
 
-### Code Splitting
+Uygulama içerisindeki kitapların bilgileri <a href="https://developers.google.com/books/docs/overview" target="_blank">Google Books API</a> ile sağlanmıştır.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ✍ Katkıda Bulunanlar <a name="katkida-bulunanlar">
 
-### Analyzing the Bundle Size
+<img src="https://tenor.com/x4wg.gif" width="400" alt="Tonton Tobi GIF - Tonton Tobi Working GIFs" style="max-width: 690px;">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Samet KOYUNCU**
+<p>
+<a href="https://www.linkedin.com/in/samet-koyuncu/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/sametkoyuncu" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-### Making a Progressive Web App
+**Onur AYLANÇ**
+<p>
+<a href="https://www.linkedin.com/in/onur-aylanc/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/aylancOnur"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Nurselin ÇAVDAR**
+  
+<p>
+<a href="https://www.linkedin.com/in/nurselin-%C3%A7-1539431bb/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/nrslncvdr"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-### Advanced Configuration
+Eğer proje hakkında bir öneriniz varsa veya herhangi bir sorun fark ettiyseniz lütfen bizimle iletişime geçiniz.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
