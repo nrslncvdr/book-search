@@ -15,6 +15,7 @@ function App() {
   const [page, setPage] = useState(0)
   const [modal, setModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
   const getBooks = async (varsaEskiVeriler) => {
     if (searchQuery === '') {
       return
@@ -46,7 +47,7 @@ function App() {
   }
 
   const bgColor = theme === 'light' ? '#fff' : '#505050'
-  console.log(theme)
+
   return (
     <div style={{ backgroundColor: bgColor }}>
       <SearchArea setSearchQuery={setSearchQuery} />
