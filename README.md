@@ -1,6 +1,4 @@
-# :face_with_monocle: Book Searching...
-
-![](./app-gif.gif)
+# 🧐Book Searching...
 
 🌍 **Canlı URL** <a href="" target="_blank"></a>
 
@@ -10,7 +8,6 @@
 - [Proje İçeriği](#proje-icerigi)
 - - [Kullanılan Teknolojiler](#kullanilan-teknolojiler)
 - - [Ekran Görüntüleri](#ekran-goruntuleri)
-- [Kurulum](#kurulum)
 - [Kullanılan Kaynaklar](#kullanilan-kaynaklar)
 - [Katkıda Bulunanlar](#katkida-bulunanlar)
 
@@ -50,17 +47,6 @@ Geliştirmiş olduğumuz uygulama ile kullanıcı kitap veya yazar ismi yazarak 
 ![Ekran Görüntüsü](./Screenshot_modal.png)
 
 **Masaüstü ekran görüntüleri**
-
-## 💻 Kurulum <a name="kurulum">
-
-Projeyi çalıştırmak için bilgisayarınızda <a href="https://nodejs.org/en/" target="_blank">Node.JS</a> yüklü olmalıdır.
-
-**Sunucu tarafının kurulumu için:**
-
-1. Dosyayı indirdikten sonra komut satırını açarak dosyanın konumunu girin.
-2. `cd server` yazarak `server` klasörüne erişin.
-3. `npm start` yazarak sunucuyu ayağa kaldırın.
-
 
 ## 📚 Kullanılan Kaynaklar <a name="kullanilan-kaynaklar">
 
