@@ -6,6 +6,7 @@ import axios from 'axios'
 import Modal from './components/Modal'
 import { useTheme } from './context/ThemeContext'
 import CardSkeleton from './components/Skeleton/CardSkeleton'
+import Error404 from './components/Error404'
 
 function App() {
   const { theme } = useTheme()

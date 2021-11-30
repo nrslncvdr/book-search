@@ -45,11 +45,9 @@ function Modal({ modal, selectedBook, setModal }) {
             className="modal__button"
             onClick={() => {
               setModal(false);
-            }} 
-            style={theme === 'dark' ? {color:'#424242'} : null}
-          >Close
+            }} >Close
           </button>
-          <button className="modal__button" style={theme === 'dark' ? {color:'#424242'} : null}>
+          <button className="modal__button" >
             <a target="_blank" href={selectedBook.volumeInfo.infoLink}>Preview</a>
           </button>
           </div>
