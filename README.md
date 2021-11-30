@@ -1,4 +1,4 @@
-# 🧐Book Searching...
+# 🧐Book Searching
 
 🌍 **Canlı URL** <a href="" target="_blank"></a>
 
