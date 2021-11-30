@@ -8,7 +8,7 @@ import { useTheme } from './context/ThemeContext'
 import CardSkeleton from './components/Skeleton/CardSkeleton'
 
 function App() {
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
   const [books, setBooks] = useState([])
   const [selectedBook, setSelectedBook] = useState({})
   const [searchQuery, setSearchQuery] = useState('')
