@@ -16,6 +16,7 @@ function App() {
   const [page, setPage] = useState(0)
   const [modal, setModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   const getBooks = async (varsaEskiVeriler) => {
     if (searchQuery === '') {
@@ -23,6 +24,9 @@ function App() {
     }
     try {
       setIsLoading(true)
+      if (isError) {
+        setIsError(false)
+      }
       const index = page * 12
       const { data } = await axios(
         `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&startIndex=${index}&maxResults=12`
@@ -31,6 +35,8 @@ function App() {
       setIsLoading(false)
     } catch (e) {
       console.log('error: ', e)
+      setIsError(true)
+      setIsLoading(false)
     }
   }
 
@@ -47,30 +53,38 @@ function App() {
     setModal(true)
   }
 
+  const showResults = () => {
+    return (
+      <>
+        {books.length < 1 && isLoading ? <CardSkeleton /> : null}
+        {books.length > 1 ? (
+          <>
+            <Cards
+              books={books}
+              setSelectedBook={setSelectedBook}
+              showModal={showModal}
+              isLoading={isLoading}
+            />
+            {isLoading ? <CardSkeleton /> : null}
+            <LoadMoreBtn page={page} setPage={setPage} />
+            <Modal
+              selectedBook={selectedBook}
+              modal={modal}
+              setModal={setModal}
+              showModal={showModal}
+            />
+          </>
+        ) : null}
+      </>
+    )
+  }
+
   const bgColor = theme === 'light' ? '#fff' : '#505050'
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <SearchArea setSearchQuery={setSearchQuery} />
-      {books.length < 1 && isLoading ? <CardSkeleton /> : null}
-      {books.length > 1 ? (
-        <>
-          <Cards
-            books={books}
-            setSelectedBook={setSelectedBook}
-            showModal={showModal}
-            isLoading={isLoading}
-          />
-          {isLoading ? <CardSkeleton /> : null}
-          <LoadMoreBtn page={page} setPage={setPage} />
-          <Modal
-            selectedBook={selectedBook}
-            modal={modal}
-            setModal={setModal}
-            showModal={showModal}
-          />
-        </>
-      ) : null}
+      <SearchArea setSearchQuery={setSearchQuery} isLoading={isLoading} />
+      {isError ? <Error404 /> : showResults()}
     </div>
   )
 }
