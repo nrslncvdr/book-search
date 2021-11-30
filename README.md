@@ -2,17 +2,16 @@
 
 🌍 **Canlı URL** <a href="" target="_blank"></a>
 
-## [README](#readme)
-## Genel Bakış
+## README
+ 
+ ## Genel Bakış
 - [Proje Hakkında](#proje-hakkinda)
 - [Proje İçeriği](#proje-icerigi)
 - - [Kullanılan Teknolojiler](#kullanilan-teknolojiler)
 - - [Ekran Görüntüleri](#ekran-goruntuleri)
 - [Kullanılan Kaynaklar](#kullanilan-kaynaklar)
 - [Katkıda Bulunanlar](#katkida-bulunanlar)
-
-
-## README <a name="readme">
+ 
 ## ℹ Proje Hakkında <a name="proje-hakkinda">
 
 [İSMEK](https://enstitu.ibb.istanbul/portal/default.aspx), Zemin İstanbul, [Kodluyoruz](https://www.kodluyoruz.org/), [Patika.dev](https://www.patika.dev/) ve [Microsoft](https://www.microsoft.com/tr-tr) iş birliği ile gerçekleştirilen "Front-End Developer Eğitim Programı" için bitirme projesi olarak **Book Searching** adlı bir kitap arama uygulaması geliştirdik.
