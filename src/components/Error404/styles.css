@@ -4,8 +4,10 @@
     text-align: center;
     border-radius: 1rem 1rem 0 0;
     transition: all 0.3s;
+    height: calc(100vh - 150px);
 }
-img{
+.error>img{
+    padding-top: 4rem;
     width: 20rem;
 }
 .info{

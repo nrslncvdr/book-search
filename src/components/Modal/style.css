@@ -152,7 +152,7 @@ a:hover
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .modal__content {
     margin: auto ;
     width: 620px ;
