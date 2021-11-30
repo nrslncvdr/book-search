@@ -1,9 +1,7 @@
 import BookCard from "./Card/BookCard";
 import { Container, Grid } from "@mui/material";
 
-
-const Cards = ({ books, setSelectedBook, showModal }) => {
-  
+const Cards = ({ books, setSelectedBook, showModal, isLoading }) => {
   return (
     <Container fixed sx={{ p: 2.5 }}>
       <Grid container spacing={2}>
@@ -13,6 +11,7 @@ const Cards = ({ books, setSelectedBook, showModal }) => {
               book={book}
               setSelectedBook={setSelectedBook}
               showModal={showModal}
+              isLoading={isLoading}
             />
           </Grid>
         ))}

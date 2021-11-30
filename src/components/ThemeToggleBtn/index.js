@@ -9,18 +9,18 @@ function ThemeToggleBtn() {
     console.log(theme)
   }
   return (
-    <div class="toggle">
+    <div className="toggle">
       <input
         type="checkbox"
         id="checkbox"
-        class="checkbox"
+        className="checkbox"
         checked={theme === 'dark' ? true : false}
         onChange={handleChange}
       />
-      <label for="checkbox" class="label">
-        <i class="fas fa-moon fa-xs"></i>
-        <i class="fas fa-sun fa-xs"></i>
-        <div class="ball"></div>
+      <label htmlFor="checkbox" className="label">
+        <i className="fas fa-moon fa-xs"></i>
+        <i className="fas fa-sun fa-xs"></i>
+        <div className="ball"></div>
       </label>
     </div>
   )

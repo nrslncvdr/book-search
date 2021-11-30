@@ -72,7 +72,7 @@
   font-size: 0.75rem;
 }
 .modal__button:hover {
-  font-size: 0.85rem;
+  background: linear-gradient(130deg, #ff8f4e 0%, #ff5443 100%);
 }
 a:hover
 {
@@ -93,7 +93,6 @@ a:hover
   z-index: var(--z-modal);
 }
 .modal__content {
-  position: relative;
   box-shadow:rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: var(--container-color);
   padding: 2rem 1.5rem 1rem;
@@ -155,9 +154,9 @@ a:hover
 /* For small devices */
 @media screen and (min-width: 576px) {
   .modal__content {
-    margin: auto !important;
-    width: 620px !important;
-    border-radius: 1.25rem !important;
+    margin: auto ;
+    width: 620px ;
+    border-radius: 1.25rem ;
   }
   .modal__img {
     width: 190px;

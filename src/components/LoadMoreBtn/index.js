@@ -1,9 +1,7 @@
 import { Grid } from '@mui/material'
-import { useTheme } from '../../context/ThemeContext'
 import './style.css'
 
 function LoadMoreBtn({ page, setPage }) {
-  const { theme, setTheme } = useTheme()
   const handleClick = () => setPage(page + 1)
   return (
     <Grid

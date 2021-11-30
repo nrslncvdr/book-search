@@ -1,14 +1,15 @@
-import "./bookCard.css";
-import img from "../../images/img.png";
-import { useTheme } from "../../../context/ThemeContext";
+import './bookCard.css'
+import img from '../../images/img.png'
+import { useTheme } from '../../../context/ThemeContext'
 
-const BookCard = ({ book, setSelectedBook, showModal }) => {
-  const { theme, setTheme } = useTheme();
-  let bgColor = theme === "dark" ? "#353535" : "";
+const BookCard = ({ book, setSelectedBook, showModal, isLoading }) => {
+  const { theme } = useTheme()
+  let bgColor = theme === 'dark' ? '#353535' : ''
   const modal = () => {
-    setSelectedBook(book);
-    showModal();
-  };
+    setSelectedBook(book)
+    showModal()
+  }
+  console.log(isLoading)
   return (
     <div className="card" style={{ backgroundColor: bgColor }}>
       <div className="cover">
@@ -29,7 +30,7 @@ const BookCard = ({ book, setSelectedBook, showModal }) => {
         Details
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default BookCard;
+export default BookCard
