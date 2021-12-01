@@ -3,7 +3,7 @@ import { Container, Grid, Skeleton } from "@mui/material";
 const CardSkeleton = () => {
   return (
     <>
-      <Container fixed sx={{ p: 2.5, paddingBottom: 27.5 }}>
+      <Container fixed sx={{ p: 2.5, paddingBottom: 30 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
             <Skeleton

@@ -1,5 +1,5 @@
 .card {
-  display: inline-block;
+  display:block;
   width: 230px;;
   border-radius: 10px;
   padding: 16px;
@@ -9,6 +9,8 @@
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   transition: all 0.4s;
   margin-bottom: 2rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .card:hover {
