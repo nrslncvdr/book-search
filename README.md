@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# 🧐Book Searching
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🌍 **Canlı URL** <a href="" target="_blank"></a>
 
-## Available Scripts
+## README
+ 
+ ## Genel Bakış
+- [Proje Hakkında](#proje-hakkinda)
+- [Proje İçeriği](#proje-icerigi)
+- - [Kullanılan Teknolojiler](#kullanilan-teknolojiler)
+- - [Ekran Görüntüleri](#ekran-goruntuleri)
+- [Kullanılan Kaynaklar](#kullanilan-kaynaklar)
+- [Katkıda Bulunanlar](#katkida-bulunanlar)
+ 
+## ℹ Proje Hakkında <a name="proje-hakkinda">
 
-In the project directory, you can run:
+[İSMEK](https://enstitu.ibb.istanbul/portal/default.aspx), Zemin İstanbul, [Kodluyoruz](https://www.kodluyoruz.org/), [Patika.dev](https://www.patika.dev/) ve [Microsoft](https://www.microsoft.com/tr-tr) iş birliği ile gerçekleştirilen "Front-End Developer Eğitim Programı" için bitirme projesi olarak **Book Searching** adlı bir kitap arama uygulaması geliştirdik.
 
-### `npm start`
+Geliştirmiş olduğumuz uygulama ile kullanıcı kitap veya yazar ismi yazarak istediği kitabı arayabilecektir. Girilen sözcüğe uygun kitaplar listelenirken, bu kitaplara ait kısa bilgiler modal ile birlikte kullanıcıya sunulmaktadır. Kullanıcı, dilerse bu kitabın tüm detaylarına "preview" butonuna tıklayarak kolayca erişebilmektir.
+ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📝 Proje İçeriği <a name="proje-icerigi">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### <img width="24px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e0.png"> Kullanılan Teknolojiler <a name="kullanilan-teknolojiler">
 
-### `npm test`
+<p>
+<a href="https://reactjs.org/" target="_blank">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> 
+</a> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a href="https://nodejs.org/en/" target="_blank">
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+</a>
+<a href="https://mui.com/" target="_blank">
+<img src="https://img.shields.io/badge/MUI-010101?&style=for-the-badge&logoColor=white" />
+</a>
+</p>
 
-### `npm run build`
+### 📸 Ekran Görüntüleri <a name="ekran-goruntuleri">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Ekran Görüntüsü](./Screenshot_searching.png)
+![Ekran Görüntüsü](./Screenshot_cards.png)
+![Ekran Görüntüsü](./Screenshot_modal.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Masaüstü ekran görüntüleri**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📚 Kullanılan Kaynaklar <a name="kullanilan-kaynaklar">
 
-### `npm run eject`
+Uygulama içerisindeki kitapların bilgileri <a href="https://developers.google.com/books/docs/overview" target="_blank">Google Books API</a> ile sağlanmıştır.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ✍ Katkıda Bulunanlar <a name="katkida-bulunanlar">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://c.tenor.com/PqJ7yMX9GFoAAAAC/bruce-almighty-comedy.gif" width="400" alt="GIF" style="max-width: 690px;">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Samet KOYUNCU**
+<p>
+<a href="https://www.linkedin.com/in/samet-koyuncu/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/sametkoyuncu" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Onur AYLANÇ**
+<p>
+<a href="https://www.linkedin.com/in/onur-aylanc/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/aylancOnur"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-## Learn More
+**Nurselin ÇAVDAR**
+  
+<p>
+<a href="https://www.linkedin.com/in/nurselin-%C3%A7-1539431bb/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/nrslncvdr"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Eğer proje hakkında bir öneriniz varsa veya herhangi bir sorun fark ettiyseniz lütfen bizimle iletişime geçiniz.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
