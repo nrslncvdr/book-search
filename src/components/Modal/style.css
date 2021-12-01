@@ -45,8 +45,8 @@
 }
 /*=============== MODAL ===============*/
 .container {
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .modal {
   height: 100vh;
@@ -92,14 +92,13 @@ a:hover {
   z-index: var(--z-modal);
 }
 .modal__content {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow:rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: var(--container-color);
   padding: 2rem 1.5rem 1rem;
   border-radius: 1rem 1rem 0 0;
   transition: all 0.3s;
   position: absolute;
-  left: 65%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -150,11 +149,12 @@ a:hover {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 576px) {
   .modal__content {
-    margin: auto;
-    width: 620px;
-    border-radius: 1.25rem;
+    margin: auto ;
+    width: 620px ;
+    border-radius: 1.25rem ;
+    left: 65%;
   }
   .modal__img {
     width: 190px;
