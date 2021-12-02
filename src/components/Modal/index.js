@@ -10,15 +10,12 @@ function Modal({ modal, selectedBook, setModal }) {
 
     <section className="modal container ">
       <div className="modal__container" id="modal-container" >
-        <div className="modal__content centered " style={theme === 'dark' ? { backgroundColor: '#424242', color:'#9e9e9e'} : null}>
-          <div className="modal__close close-modal" title="Close" >
-            <i
-              className="bx bx-x"
-              onClick={() => {
+        <div className="modal__content  " style={theme === 'dark' ? { backgroundColor: '#424242', color:'#9e9e9e'} : null}>
+          
+          <a href="#"  class="modal-close"onClick={() => {
                 setModal(false);
-              }}
-            ></i>
-          </div>
+              }} > X</a>
+         
           <div className="img_container">
             <img
               src={selectedBook?.volumeInfo?.imageLinks?.thumbnail
