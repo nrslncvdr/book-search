@@ -38,12 +38,10 @@ function Modal({ modal, selectedBook, setModal }) {
             </p>
             <p className="book__detail" style={theme === 'dark' ? {color:'#9e9e9e'} : null}>
             Authors  <br/>{selectedBook.volumeInfo.authors == null ? "No authors!" : selectedBook.volumeInfo.authors.map(a=> <> {a} <br/></>)} </p>
-            <button
-            className="modal__button"
+            <button className="btn_close modal__button "
             onClick={() => {
               setModal(false);
-            }} >Close
-          </button>
+            }} >Close </button>
           <button className="modal__button" >
             <a target="_blank" href={selectedBook.volumeInfo.infoLink}>Preview</a>
           </button>

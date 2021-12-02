@@ -35,14 +35,7 @@
   margin: 0;
 }
 
-.modal__button {
-  float: right;
-  margin-left: 5px;
-  margin-right: 10px;
-  padding: 5px;
-  width: 80px;
-  height: 30px;
-}
+
 /*=============== MODAL ===============*/
 .container {
   margin-left: auto;
@@ -63,6 +56,12 @@
   overflow: hidden;
 }
 .modal__button {
+  float: right;
+  margin-left: 5px;
+  margin-right: 10px;
+  padding: 5px;
+  width: 80px;
+  height: 30px;
   cursor: pointer;
   background: linear-gradient(130deg, #ff5443 0%, #ff8f4e 100%);
   border: 0px;
@@ -163,7 +162,14 @@ a:hover {
   .modal__img {
     width: 190px;
   }
+ 
+}
+@media screen and (max-width: 576px) {
+
   .text_container {
     padding: 10px;
+  }
+  .btn_close{
+    margin-bottom: 5px !important;
   }
 }
