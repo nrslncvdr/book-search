@@ -1,3 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+.scroll-rocket:hover {
+     transform: scale(1.1);
+}

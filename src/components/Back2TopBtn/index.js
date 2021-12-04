@@ -34,10 +34,6 @@ function Bock2TopBtn() {
               width: 64,
               height: 64,
               backgroundImage: `url(${imgRocket})`,
-              '&:hover': {
-                backgroundImage: `url(${imgRocket})`,
-                opacity: [0.9, 0.8, 0.7],
-              },
               position: 'fixed',
               bottom: '25px',
               right: '25px',
