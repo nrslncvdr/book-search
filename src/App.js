@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import SearchArea from './components/Search'
 import Cards from './components/Cards/Cards'
 import LoadMoreBtn from './components/LoadMoreBtn'
+import Back2TopBtn from './components/Back2TopBtn'
 import axios from 'axios'
 import Modal from './components/Modal'
 import { useTheme } from './context/ThemeContext'
@@ -56,8 +57,16 @@ function App() {
   const showResults = () => {
     return (
       <>
-        {books.length < 1 && isLoading ? <CardSkeleton /> : null}
-        {books.length > 1 ? (
+        {/*
+          koşullar
+          1- kitap yoksa -> 1.1 isLoading'se skeleton göster
+                            1.2 (else - default) hiçbir şey gösterme (yoksa ilk açılışta scroll çıkıyor)
+          2- kitap varsa -> (default) compnentleri render et
+                            1.1 eğer isLoading'se skeleton göster 'cards' ve 'load button' arasında
+        */}
+        {books.length < 1 ? (
+          isLoading && <CardSkeleton />
+        ) : (
           <>
             <Cards
               books={books}
@@ -65,7 +74,7 @@ function App() {
               showModal={showModal}
               isLoading={isLoading}
             />
-            {isLoading ? <CardSkeleton /> : null}
+            {isLoading && <CardSkeleton />}
             <LoadMoreBtn page={page} setPage={setPage} />
             <Modal
               selectedBook={selectedBook}
@@ -73,8 +82,9 @@ function App() {
               setModal={setModal}
               showModal={showModal}
             />
+            <Back2TopBtn />
           </>
-        ) : null}
+        )}
       </>
     )
   }
@@ -84,6 +94,7 @@ function App() {
   return (
     <div style={{ backgroundColor: bgColor }}>
       <SearchArea setSearchQuery={setSearchQuery} isLoading={isLoading} />
+      {/* error varsa 404 komponenti yoksa diğer komponentleri render et */}
       {isError ? <Error404 /> : showResults()}
     </div>
   )
