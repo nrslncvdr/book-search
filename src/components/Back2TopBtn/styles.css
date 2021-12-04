@@ -1,0 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-rocket {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.scroll-rocket:hover {
+     transform: scale(1.1);
+}
