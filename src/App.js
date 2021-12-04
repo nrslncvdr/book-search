@@ -9,6 +9,9 @@ import { useTheme } from './context/ThemeContext'
 import CardSkeleton from './components/Skeleton/CardSkeleton'
 import Error404 from './components/Error404'
 
+//yeni aramada sayfanın yukarıya çıkmasını sağlamak için kullanılacak değiken
+let scrollFixer = false
+
 function App() {
   const { theme } = useTheme()
   const [books, setBooks] = useState([])
@@ -34,6 +37,7 @@ function App() {
       )
       setBooks([...varsaEskiVeriler, ...data.items])
       setIsLoading(false)
+      scrollFixer = false
     } catch (e) {
       console.log('error: ', e)
       setIsError(true)
@@ -42,6 +46,7 @@ function App() {
   }
 
   useEffect(() => {
+    scrollFixer = true
     setBooks([])
     getBooks([])
   }, [searchQuery])
@@ -64,6 +69,7 @@ function App() {
           2- kitap varsa -> (default) compnentleri render et
                             1.1 eğer isLoading'se skeleton göster 'cards' ve 'load button' arasında
         */}
+        {scrollFixer && window.scrollTo(0, -160)}
         {books.length < 1 ? (
           isLoading && <CardSkeleton />
         ) : (
