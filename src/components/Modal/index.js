@@ -12,7 +12,7 @@ function Modal({ modal, selectedBook, setModal }) {
       <div className="modal__container" id="modal-container" >
         <div className="modal__content  " style={theme === 'dark' ? { backgroundColor: '#424242', color:'#9e9e9e'} : null}>
           
-          <a href="#"  class="modal-close"onClick={() => {
+          <a class="modal-close"onClick={() => {
                 setModal(false);
               }} > X</a>
          

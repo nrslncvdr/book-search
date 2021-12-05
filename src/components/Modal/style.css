@@ -120,7 +120,7 @@ a:hover {
   text-decoration: none;
   background: linear-gradient(130deg, #ff5443 0%, #ff8f4e 100%);
   border-radius: 25px;
-  color: #fff;
+  color: #fff !important;
   font-weight: bold;
   font-size: 0.75rem;
 }
@@ -171,5 +171,9 @@ a:hover {
   }
   .btn_close{
     margin-bottom: 5px !important;
+  }
+  .modal__img {
+    max-height: 200px;
+    border-radius: 2px;
   }
 }
